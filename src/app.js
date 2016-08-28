@@ -18,16 +18,16 @@ var gameScene = cc.Scene.extend({
 });
 
 //デバッグ用ラベル
-var debugText;
+//var debugText;
 var gameLayer = cc.Layer.extend({
   sprite: null,
   ctor: function() {
     this._super();
     size = cc.winSize;
-    //デバッグ用ラベルをcreate
+    /*//デバッグ用ラベルをcreate
     debugText = cc.LabelTTF.create("debug","Arial","32", cc.TEXT_ALIGNMENT_CENTER);
     this.addChild(debugText);
-    debugText.setPosition(450,size.height - 20);
+    debugText.setPosition(450,size.height - 20);*/
     return true;
   },
 
@@ -105,28 +105,20 @@ var particleLayer = cc.Layer.extend({
   　　//HealとSlipスキル追加
     var skillName = ["Fire_under"/*",Fire_under2"*/,"Chage","Beam","Meteo","Megido","Megido2"];
     var sName = "res." + skillName[attrib] ;
-    //var sName = "res.Fire_under";
 
-    debugText.setString(sName);
+    //debugText.setString("No."+attrib+sName);
 
     var tempParticle = new cc.ParticleSystem(eval(sName));
 
+    tempParticle.setPosition(550 , 60);
+
     if(attrib == 0){
-      tempParticle.setPosition(550 , 150);
       var tempParticle2 = new cc.ParticleSystem(eval("res.Fire_pillar"));
         tempParticle2.setPosition(550 , 400);
         this.addChild(tempParticle2, 20);
         tempParticle.setAutoRemoveOnFinish(true);
     }
-/*
-    if(attrib == 1){
-      tempParticle.setPosition(550 , 100);
-      var tempParticle3 = new cc.ParticleSystem(eval("res.Fire_slanting"));
-        tempParticle3.setPosition(550 , 100);
-        this.addChild(tempParticle3, 20);
-        tempParticle.setAutoRemoveOnFinish(true);
-    }
-*/
+
     if(attrib == 1){
       tempParticle.setPosition(size.width * 0.2, size.height * 0.3);
     }
@@ -137,15 +129,20 @@ var particleLayer = cc.Layer.extend({
     }
 
     if(attrib == 3){
-        tempParticle.setPosition(550,150);
+      tempParticle.setPosition(size.width * 0.6, size.height * 0.4)
+    }
+
+
+    if(attrib == 4){
+      tempParticle.setPosition(size.width/2, size.height/2+100);
     }
 
     if( attrib == 5){
+      tempParticle.setPosition(size.width/2, size.height/2);
       var RockParticle = new cc.ParticleSystem(eval("res.Rock"));
         RockParticle.setPosition(500 , 50);
         this.addChild(RockParticle, 20);
         RockParticle.setAutoRemoveOnFinish(true);
-
     }
 
 
