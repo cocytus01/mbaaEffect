@@ -21,7 +21,7 @@ var res = {
   Chage        : "res/particle/chage.plist",
   Beam         : "res/particle/beam.plist",
   Megido       : "res/particle/megido_texture.plist",
-  Megido2      : "res/particle/megido_exp_texture.plist",
+  Megido2      : "res/particle/megido_exp.plist",
   Rock         : "res/particle/rock.plist",
   Meteo        : "res/particle/meteo.plist",
 };

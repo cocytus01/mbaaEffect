@@ -1,3 +1,2 @@
-# mbaaEffect
-注)最後のエフェクトめっさ重い
+# mbaaEffect<Br>
 https://cocytus01.github.io/mbaaEffect/
